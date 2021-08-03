@@ -1,0 +1,76 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 3.0.1-d8a290b55d28
+Exec   : pimpleFoam
+Date   : Aug 03 2021
+Time   : 16:25:55
+Host   : "philipp-MS-7A38"
+PID    : 9723
+Case   : /home/philipp/OpenFOAM/philipp-3.0.1/run/FHMuenster/Masterthesis/Naca/fluid_working
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PIMPLE: max iterations = 20
+    field U	: relTol 0, tolerance 0.001
+    field p	: relTol 0, tolerance 0.01
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+kOmegaSSTCoeffs
+{
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+}
+
+No MRF models present
+
+No finite volume options present
+
+
+Starting time loop
+
+forceCoeffs forceCoeffs:
+    Not including porosity effects
+
+fieldAverage fieldAverage:
+    Starting averaging at time 0
+
+Courant Number mean: 0.0376727 max: 2.01816
+deltaT = 0.001982
+Time = 0.001982
+
+PIMPLE: iteration 1
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 0.0505655, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 1, Final residual = 0.0417449, No Iterations 1
